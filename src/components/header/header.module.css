@@ -1,0 +1,40 @@
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+header.fixed-top+main {
+    padding-top: calc(1.5rem + 56px);
+    margin-bottom: 1.5rem;
+}
+
+main {
+    background-color: #eff2f6;
+}
+
+/* .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1600px;
+} */
+
+/* .sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+} */
+
+.imgNavbar {
+    width: 45px;
+    height: 45ps;
+    border-radius: 100px;
+
+}
+
+.imgDivCard {
+    background-color: rgb(200, 250, 205);
+    border-radius: 5px;
+    padding: 5px;
+}
