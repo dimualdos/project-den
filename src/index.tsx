@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
+import { HashRouter } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from './servises/store';
 import {
@@ -8,8 +9,11 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import './index.css';
+
 import { AndSometingElse, CompletedTasks, ErrorPage, NewTasks, OtherTasks, SomethingElse } from './pages/index';
+import { TasksDetail } from './components/tasks-detail/tasks-detail';
+import './index.css';
+
 
 const router = createBrowserRouter([
   {
@@ -20,6 +24,7 @@ const router = createBrowserRouter([
       {
         path: 'new-tasks',
         element: <NewTasks />,
+
       },
       {
         path: 'completed-tasks',
@@ -37,6 +42,10 @@ const router = createBrowserRouter([
         path: 'and-something-else',
         element: <AndSometingElse />,
       },
+      {
+        path: '/new-tasks/:id',
+        element: <TasksDetail />
+      }
     ],
   },
 ]);
@@ -48,7 +57,10 @@ root.render(
   <Provider store={store}>
     <React.StrictMode>
       <RouterProvider router={router} />
-      {/* <BrowserRouter>
+
+
+      {/* <HashRouter>
+
         <Routes>
           <Route path="/" element={<App />}>
 
@@ -60,7 +72,7 @@ root.render(
 
           </Route>
         </Routes>
-      </BrowserRouter> */}
+      </HashRouter> */}
     </React.StrictMode>
   </Provider>
 );

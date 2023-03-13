@@ -1,16 +1,15 @@
 import React from 'react';
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { createTheme, PaletteMode, ThemeProvider } from '@mui/material';
 import { grey, teal } from '@mui/material/colors';
 import nextId from "react-id-generator";
 import { getItemsTasks } from '../../servises/actions/tasks-detail';
-import { MainContainer } from '../main-container/main-container';
 import { AppDispatch } from '../../servises/store';
 import { ColorModeContext } from '../../servises/color-mode-context';
 import { NavbarLeft } from '../navbar-left/navbar-left';
 import styles from './app.module.css';
+import { useAppDispatch } from '../../hooks/hooks';
 
 
 
@@ -49,7 +48,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
 
 
 function App() {
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch: AppDispatch = useAppDispatch();
   const [mode, setMode] = React.useState<PaletteMode>('light');
   const colorMode = React.useMemo(
     () => ({

@@ -5,16 +5,22 @@ import {
     GET_ITEMS_REQUEST,
     GET_ITEMS_FAILED,
     GET_ITEMS_SUCCESS
-} from '../actions/tasks-detail';
+} from '../constants/task-details-constants'
 
-export const initialState = {
+interface ITaskReduser {
+    itemsRequest: boolean,
+    itemsFailed: boolean,
+    tasks: [],
+}
+
+export const initialState: ITaskReduser = {
     itemsRequest: false,
     itemsFailed: false,
     tasks: [],
 }
 
 
-export const tasksReducer = (state = initialState, action) => {
+export const tasksReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case GET_ITEMS_REQUEST: {
             return {

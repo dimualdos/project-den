@@ -1,0 +1,48 @@
+.container {
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chatHeader {
+  width: 100%;
+  background-color: #1F1F1F;
+  display: flex;
+  padding: var(--container-padding);
+  gap: 12px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.messagesWrapper {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+  padding: var(--container-padding);
+}
+
+.replyBar {
+  width: 100%;
+  background-color: #1F1F1F;
+  display: flex;
+  padding: var(--container-padding);
+  gap: 12px;
+}
+
+.recipient {
+  font-weight: 700;
+}
+
+.recipientInfo {
+  flex-grow: 1;
+}
+
+.lastSeen {
+  margin-top: 8px;
+  color: rgba(250, 250, 250, .6);
+}
